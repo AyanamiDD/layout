@@ -46,7 +46,7 @@ export default {
     overflow: hidden;
   }
   .right-wrapper {
-    min-width: $menuWidth / 3 * 2;
+    min-width: calc($menuWidth / 3) * 2;
     height: 100%;
   }
   .avatar-wrapper {
