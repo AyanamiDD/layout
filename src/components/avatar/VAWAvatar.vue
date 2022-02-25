@@ -37,7 +37,7 @@ export default {
   },
   created(){
     //从vuex里获取姓名和头像数据
-    this.name = store_.state.user.userId
+    this.name = store_.state.user.userName
     this.avatarSrc=store_.state.user.avatar
   },
   methods: {
