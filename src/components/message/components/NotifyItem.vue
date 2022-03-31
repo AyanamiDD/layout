@@ -4,16 +4,28 @@
       <i class="el-icon-message-solid"></i>
     </div>
     <div class="content">
-      <div class="title text-cut">请下午三点半到大会议室开项目需求分析会，要求与会人员必须按时到场</div>
-      <div class="time">1小时前</div>
+      <el-tooltip placement="top">
+        <div slot="content">
+          道路<span style="color: red">{{ data.place }}</span>
+          行驶过未处理违章车辆：<span style="color: red">
+            {{ data.licensePlateNumber }}</span>
+          </div>
+        <div class="title text-cut">
+          道路<span style="color: red">{{ data.place }}</span>
+          行驶过未处理违章车辆：<span style="color: red">
+            {{ data.licensePlateNumber }}</span>
+        </div>
+      </el-tooltip>
+      <div class="time">{{ data.date }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'NotifyItem'
-}
+  name: "NotifyItem",
+  props: ["data"],
+};
 </script>
 
 <style lang="scss" scoped>
@@ -36,12 +48,16 @@ export default {
   }
   .content {
     flex: 1;
+    margin-left: 3px;
+    cursor: pointer;
     .title {
+      width: 230px;
       font-size: 14px;
+      text-overflow:ellipsis;
       color: currentColor;
     }
     .time {
-      margin-top: 10px;
+      margin-top: 2px;
       font-size: 12px;
     }
   }
